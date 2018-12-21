@@ -37,7 +37,7 @@ m         1s /  2.99792458e8        # because c     = 3e8 m/s        = 1
 A         sqrt(4e-7 pi N)           # because mu0   = 4e-7 pi N/A^2  = 1
 K         1.3806488e-23 J           # because kB    = 1.4e-23 J/K    = 1
 g         1e-3 J / (m^2/s^2)
-cd        ! 
+cd        !
 mol       !
 
 rad       !dimensionless
@@ -67,7 +67,7 @@ kelvin    K
 
 radian    rad
 steradian sr
-           
+
 N                       newton
 Pa                      pascal
 W                       watt
@@ -79,7 +79,7 @@ Wb                      weber
 H                       henry
 T                       tesla
 Hz                      hertz
-          
+
 ###########################################################################
 # Other units                                                             #
 ###########################################################################
@@ -93,7 +93,7 @@ ppt                     1e-12
 inch                    0.0254 m
 in                      inch
 gauss                   1e-4 tesla
-G                       gauss                   
+G                       gauss
 angstrom                1e-10 m
 dyne                    1e-5 newton
 barn                    1e-28 m^2

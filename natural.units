@@ -202,7 +202,7 @@ da-                     deka
 d-                      deci
 c-                      centi
 m-                      milli
-u-                      micro   # it should be a mu but u is easy to type
+u-                      micro   # it should be "mu" but "u" is easy to type
 n-                      nano
 p-                      pico
 f-                      femto

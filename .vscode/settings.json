@@ -2,10 +2,12 @@
   "cSpell.words": [
     "gunits",
     "hbar",
+    "NIST",
     "permittivity",
-    "peskin",
+    "Peskin",
     "readline",
-    "sup"
+    "sup",
+    "tropicalyear"
   ],
   "markdownlint.config": {
     "MD033": { "allowed_elements": ["sub", "sup"] }

@@ -57,7 +57,7 @@ In the natural units, all the units are given in terms of energy (giga electron 
 where c, &hbar; and k<sub>B</sub> are respectively the speed of light, the Planck constant and the Boltzmann constant.
 
 For electromagnetism, we use the Lorentz-Heaviside convention, where the vacuum permittivity, &epsilon;<sub>0</sub>, and the vacuum permeability, &mu;<sub>0</sub>, are defined by
-  **&mu;<sub>0</sub> = c<sup>2</sup>/&epsilon;<sub>0</sub> = 1.
+  **&mu;<sub>0</sub> = c<sup>2</sup>/&epsilon;<sub>0</sub> = 1**.
 The fine structure constant is given by
   **&alpha; = e^2/4&pi;**,
 where the elementary charge is given by
@@ -226,7 +226,7 @@ Values are taken from [PDG Review of Particle Physics 2014](http://inspirehep.ne
 Planck mass is symbolized by `Mpl`, while reduced Planck mass is by `M`.
 
 Light year (`ly`) is defined as
-  **c\cdot365.25day**
+  **c &times; 365.25day**
 following [NIST publication 811](https://www.nist.gov/pml/special-publication-811), while `yr` denotes `tropicalyear` as is in PDG table.
 
 ## Author

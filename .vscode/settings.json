@@ -1,0 +1,13 @@
+{
+  "cSpell.words": [
+    "gunits",
+    "hbar",
+    "permittivity",
+    "peskin",
+    "readline",
+    "sup"
+  ],
+  "markdownlint.config": {
+    "MD033": { "allowed_elements": ["sub", "sup"] }
+  }
+}

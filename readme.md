@@ -1,163 +1,234 @@
-natural_units
-=============
+# natural_units
 
-### Overview
+The [Natural Units](https://en.wikipedia.org/wiki/Natural_units) convention file for [GNU units](https://www.gnu.org/software/units/).
 
-The Natural Units convention file for [GNU units](https://www.gnu.org/software/units/).
+## TL;DR
 
-#### Definition
+### Debian/Ubuntu
 
-Natural Units convention is defined by
-$$
-\def\kB{k_{\rm B}}
-\def\un#1{\,{\rm #1}}
-c = \hbar = \kB = 1,
-$$
-where $$$c, \hbar$$$, and $$$\kB$$$ are the speed of light, the Planck constant and the Boltmann constant, respectively.
+```console
+$ apt-get install units
 
-Also we adopt Heaviside-Lorentz convention for the vacuum permittivity $$$\epsilon_0$$$ and the vacuum permeability $$$\mu_0$$$:
-$$
-\mu_0 = c^2/\epsilon_0 = 1.
-$$
+$ units -V   # check that you are running **GNU Units**, not BSD units.
 
-With this convention, the fine structure constant is
-$$
-\alpha = \frac{e^2}{4\pi},
-$$
-where $$$e\approx 0.303$$$ is the positron charge.
+GNU Units version 2.1x
+with readline, with utf8, locale en_US
+Units data file is '/usr/share/units/definitions.units'
 
-#### Data Source and Convention
+$ units -f natural.units
 
-Values are taken from	 [PDG Review of Particle Physics 2014](http://inspirehep.net/record/1315584).
-
-Planck mass is symbolized by `Mpl`, while reduced Planck mass is by `M`.
-
-Light year (`ly`) is defined as $$$c\cdot365.25\un{day}$$$, while `yr` denotes `tropicalyear`.
-
-
-### How to use
-
-#### Installation of GNU units
-
-On Debian/Ubuntu,
-
-```
-apt-get install units
+113 units, 42 prefixes, 0 nonlinear units
+You have: 1m
+You want: s
+    1m = 3.335641e-09 s
+    1m = (1 / 2.9979246e+08) s
 ```
 
-On MacOSX with [Homebrew](http://brew.sh/),
+### macOS + Homebrew
 
+```console
+$ brew install gnu-units
+
+$ gunits -V   # double-check that you are running **GNU Units**, not BSD units.
+
+GNU Units version 2.1x
+
+$ gunits -vf natural.units
+
+113 units, 42 prefixes, 0 nonlinear units
+
+You have: 1 / fm
+You want: GeV
+    1 / fm = 0.19732696 GeV
+    1 / fm = (1 / 5.0677312) GeV
 ```
-brew install units
-brew link units
+
+## Overview
+
+`natural.units` is a definition file of the [natural units](https://en.wikipedia.org/wiki/Natural_units) for [GNU units](https://www.gnu.org/software/units/).
+
+***This is only for GNU units, not for BSD units pre-installed in macOS.***
+You can check version by `units -v` (for BSD units) or `units -V` (for GNU units).
+
+### Definition
+
+In the natural units, all the units are given in terms of energy (giga electron volt, GeV) with defining
+  **c = &hbar; = k<sub>B</sub> = 1**,
+where c, &hbar; and k<sub>B</sub> are respectively the speed of light, the Planck constant and the Boltzmann constant.
+
+For electromagnetism, we use the Lorentz-Heaviside convention, where the vacuum permittivity, &epsilon;<sub>0</sub>, and the vacuum permeability, &mu;<sub>0</sub>, are defined by
+  **&mu;<sub>0</sub> = c<sup>2</sup>/&epsilon;<sub>0</sub> = 1.
+The fine structure constant is given by
+  **&alpha; = e^2/4&pi;**,
+where the elementary charge is given by
+  **e = 1.60&times;10<sup>-19</sup> C = 0.303**.
+
+## How to use
+
+  1. Install GNU units.
+  2. Prepare the file `natural.units`.
+  3. Run and convert!
+
+### Installation of GNU units
+
+You can install **GNU** Units with `apt-get` (Debian/Ubuntu) or via [Homebrew](http://brew.sh/) (macOS) by
+
+```console
+apt-get install units   # Debian / Ubuntu
+brew install gnu-units  # macOS
 ```
 
-Note that ***this file is for GNU units, not for BSD units*** preinstalled in OSX. You can check version by `units -v` (for BSD units) or `units -V` (for GNU units).
+You should check that you are running **GNU** units, not **BSD** units (pre-installed in macOS), by
 
-#### Examples
+```console
+$ units -V   # Debian / Ubuntu + apt-get
+$ gunits -V  # macOS + Homebrew
 
+GNU Units version 2.1x
 ```
-$ natural_units:> units -f natural.units
-units: unit name without a definition at line 103 of file 'natural.units'
-112 units, 42 prefixes, 0 nonlinear units
+
+### Run with `natural.units`
+
+Run GNU Units with the file `natural.units`, downloaded from this GitHub repository:
+
+```console
+units -f natural.units    # Debian / Ubuntu + apt-get
+gunits -f natural.units   # macOS + Homebrew
+```
+
+
+### Troubleshooting
+
+You will encounter error message below if you are running *BSD* Units:
+
+```output
+units: redefinition of unit '#' on line 2 ignored
+units: redefinition of unit '#' on line 3 ignored
+units: redefinition of unit '#' on line 3 ignored
+units: unexpected end of unit on line 3
+units: redefinition of unit '#' on line 4 ignored
+...
+```
+
+In this case, you have to recheck that you have installed **GNU** units and that you are using the correct command.
+
+## Examples and some validations
+
+### Basic examples
+
+```console
+$ units -f natural.units
 
 You have: 1s
 You want: m
-	* 2.9979246e+08
-	/ 3.335641e-09
+    * 2.9979246e+08
+    / 3.335641e-09
 You have: 100 fb
 You want: /GeV^2
-	* 2.5681899e-10
-	/ 3.893793e+09
+    * 2.5681899e-10
+    / 3.893793e+09
 You have: 3 pc
 You want: m
-	* 9.2570327e+16
-	/ 1.0802598e-17
+    * 9.2570327e+16
+    / 1.0802598e-17
 You have: 4.2K
-You want: 
-	Definition: 3.6192796e-13 GeV
+You want:
+    Definition: 3.6192796e-13 GeV
 You have: 200 fm
 You want: MeV
-	* 1.0135462
-	/ 0.98663482
+    * 1.0135462
+    / 0.98663482
 You have: 200 fm
 You want: MeV
-	reciprocal conversion
-	* 0.98663482
-	/ 1.0135462
+    reciprocal conversion
+    * 0.98663482
+    / 1.0135462
 You have: 1 Mpl
 You want: m
-	reciprocal conversion
-	* 1.6161943e-35
+    reciprocal conversion
+    * 1.6161943e-35
 You have: sqrt(4 pi epsilon0)
 You want: C
-	* 1.8755459e-18
-	/ 5.331781e+17
+    * 1.8755459e-18
+    / 5.331781e+17
 ```
 
-This is telling $$$1\un{s}=3\times10^8\un{m}$$$, $$$100\un{fb} = 2.6\times10^{-10}/{\rm GeV^2}$$$, etc.
+### Basic validations
 
-#### Validations
+```console
+$ units -f natural.units
 
-```
 You have: 4pi hbar c / e^2
-You want: 
-	Definition: 137.036
+You want:
+    Definition: 137.036
 
 You have: 4pi/e^2
-You want: 
-	Definition: 137.03599
+You want:
+    Definition: 137.03599
 
 You have: c
-You want: 
-	Definition: 2.99792458e8 m/s = 1
+You want:
+    Definition: 2.99792458e8 m/s = 1
 
 You have: hbar
-You want: 
-	Definition: 1.054571726e-34 J s = 1
+You want:
+    Definition: 1.054571726e-34 J s = 1
 
 You have: e
-You want: 
-	Definition: 1.602176565e-19 C = 0.30282213
-	
+You want:
+    Definition: 1.602176565e-19 C = 0.30282213
+
 You have: kB
-You want: 
-	Definition: 1.3806488e-23 J/K = 1
+You want:
+    Definition: 1.3806488e-23 J/K = 1
 
 You have: mu0
-You want: 
-	Definition: 4 pi 1e-7 H/m = 1
+You want:
+    Definition: 4 pi 1e-7 H/m = 1
 
 You have: epsilon0
-You want: 
-	Definition: 1/mu0 c^2 = 1
+You want:
+    Definition: 1/mu0 c^2 = 1
 ```
 
-Also, as shown in the Appendix of [Peskin's QFT book](http://www.slac.stanford.edu/~mpeskin/QFT.html),
+### More validations
 
-```
+See the Appendix of [Peskin's QFT book](http://www.slac.stanford.edu/~mpeskin/QFT.html).
+
+```console
+$ units -f natural.units
+
 You have: 1 GeV
 You want: g
-	* 1.7826618e-24
+    * 1.7826618e-24
 
 You have: 1/GeV
 You want: fm
-	* 0.19732696
+    * 0.19732696
 
 You have: 1/GeV^2
 You want: mb
-	* 0.3893793
+    * 0.3893793
 
 You have: 1 e V / m
-You want: 
-	Definition: 1.9732696e-25 GeV^2
+You want:
+    Definition: 1.9732696e-25 GeV^2
 
 You have: 1 e tesla
-You want: 
-	Definition: 5.9157135e-17 GeV^2
+You want:
+    Definition: 5.9157135e-17 GeV^2
 ```
 
-### Author
+## Data Source and Convention
+
+Values are taken from [PDG Review of Particle Physics 2014](http://inspirehep.net/record/1315584).
+
+Planck mass is symbolized by `Mpl`, while reduced Planck mass is by `M`.
+
+Light year (`ly`) is defined as
+  **c\cdot365.25day**
+following [NIST publication 811](https://www.nist.gov/pml/special-publication-811), while `yr` denotes `tropicalyear` as is in PDG table.
+
+## Author
 
 Sho Iwamoto @ [http://www.misho-web.com/](http://www.misho-web.com/)
-

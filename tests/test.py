@@ -59,8 +59,8 @@ class TestNaturalUnits(unittest.TestCase):
     def test_exact_values(self):
         self.digits = 15
         self.c('c',        '',    1)
-        self.c('h',        '2pi', 1, d=8)
-        self.c('hbar',     '',    1, d=8)
+        self.c('h',        '2pi', 1)
+        self.c('hbar',     '',    1)
         self.c('kB',       '',    1)
         self.c('mu0',      '',    1)
         self.c('epsilon0', '',    1)
@@ -78,15 +78,15 @@ class TestNaturalUnits(unittest.TestCase):
         self.c('c',        'm/s',        299792458, d=8)
         self.c('mu0',      'N/A^2',      12.566370614e-7, d=9)
         self.c('epsilon0', 'F/m',        8.854187817e-12, d=8)
-        self.c('GN',       'm^3/kg/s^2', 6.67408e-11, d=5)
-        self.c('GN',       '/GeV^2',     6.70861e-39, d=5)
+        self.c('G_N',      'm^3/kg/s^2', 6.67408e-11, d=5)
+        self.c('G_N',      '/GeV^2',     6.70861e-39, d=5)
         self.c('h',        'J s',        6.626070040e-34, d=8)
         self.c('hbar',     'eV s',       6.582119514e-16, d=8)
-        self.c('Mpl',      'kg',         2.176407e-8, d=5)
-        self.c('Mpl',      'GeV',        1.220910e19, d=5)
-        self.c('Mpl',      'K',          1.416808e32, d=5)
-        self.c('1/Mpl',    'm',          1.616229e-35, d=5)
-        self.c('1/Mpl',    's',          5.39116e-44, d=5)
+        self.c('M_pl',     'kg',         2.176407e-8, d=5)
+        self.c('M_pl',     'GeV',        1.220910e19, d=5)
+        self.c('M_pl',     'K',          1.416808e32, d=5)
+        self.c('1/M_pl',   'm',          1.616229e-35, d=5)
+        self.c('1/M_pl',   's',          5.39116e-44, d=5)
 
 
 if __name__ == '__main__':

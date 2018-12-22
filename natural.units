@@ -2,86 +2,152 @@
 # for use with GNU units by Adrian Mariano <adrian@cam.cornell.edu>.
 #
 # 10 Apr 2015 Version 0.10 by Sho Iwamoto
+# 22 Dec 2018 Version 0.20beta by Sho Iwamoto
+#   - transit to SI definition 2019
+#   - experimental values should be updated by CODATA2018 recommendation
 #
 
 ###########################################################################
-# Fundamental unit and values                                             #
+# Fundamental units and values                                            #
 ###########################################################################
 
-GeV          !
-eV           1e-9 GeV
-electronvolt eV
+GeV             !
+eV              1e-9 GeV
+electronvolt    eV
 
-pi           3.14159265358979323846
+pi              3.14159265358979323846
 
-#------ These values should be converted to 1 ------#
-c            2.99792458e8 m/s
-hbar         1.054571726e-34 J s         # from PDG2014
-kB           1.3806488e-23 J/K           # from PDG2014
-mu0          4 pi 1e-7 H/m
-epsilon0     1/mu0 c^2
+c               299792458        m/s        # exact; should be 1
+h               6.62607015e-34   J s        # exact; should be 2pi
+e               1.602176634e-19  C          # exact
+kB              1.380649e-23     J/K        # exact; should be 1
+avogadro        6.02214076e23    /mol       # exact
 
-h            2 pi hbar
-e            1.602176565e-19 C           # from PDG2014
-GN           6.6738e-11 m^3 / kg / s^2   # from PDG2014
+hbar            h / 2 / pi                  # should be 1
+mu0             4 pi 1e-7 H/m               # should be 1; value from BIPM 9th draft https://www.bipm.org/utils/common/pdf/si-brochure-draft-2016.pdf
+epsilon0        1/mu0 c^2                   # should be 1
 
-joule        1|1.602176565e-19 eV
-J            joule
+joule           1|1.602176634e-19 eV        # exact; because eV/J = (V e) / (V C) = e/C
+
+A               sqrt(4e-7 pi N)             # experimental; because mu0 = 4e-7 pi N/A^2  = 1
+s               2pi / (6.62607015e-34 J)    # exact; because h = 2pi
+m               1   / (299792458 /s)        # exact; because c = 1
+K               1.380649e-23 J              # exact; because kB = 1
+g               1e-3 J / (m^2/s^2)          # exact
+
+mol             !
+cd              !
+rad             !dimensionless
+sr              !dimensionless
+
+N_A             avogadro
+J               joule
+
 
 ###########################################################################
 # SI units                                                                #
 ###########################################################################
 
-s         1  / (6.582119e-22 MeV)   # because hbar  = 6.58e-22 MeV s = 1
-m         1s /  2.99792458e8        # because c     = 3e8 m/s        = 1
-A         sqrt(4e-7 pi N)           # because mu0   = 4e-7 pi N/A^2  = 1
-K         1.3806488e-23 J           # because kB    = 1.4e-23 J/K    = 1
-g         1e-3 J / (m^2/s^2)
-cd        !
-mol       !
+second         s
+sec            s
+meter          m
+gram           g
+ampere         A
+kelvin         K
+mole           mol
+candela        cd
+radian         rad
+steradian      sr
 
-rad       !dimensionless
-sr        !dimensionless
+hertz          /s
+newton         J/m
+pascal         N/m^2
+watt           J/s
+coulomb        A s
+volt           W/A
+farad          C/V
+ohm            V/A
+siemens        A/V
+weber          V s
+tesla          Wb/m^2
+henry          Wb/A
+# lumen        cd sr
+# lux          lm/m^2
+# beqcuerel    /s
+# gray         m^2/s^2
+# sievert      m^2/s^2
+# katal        mol/s
 
-newton    J/m
-pascal    N/m^2
-watt      J/s
-coulomb   A s
-volt      W/A
-ohm       V/A
-siemens   A/V
-farad     C/V
-weber     V s
-henry     Wb/A
-tesla     Wb/m^2
-hertz     /s
+N              newton
+Pa             pascal
+W              watt
+C              coulomb
+V              volt
+S              siemens
+F              farad
+Wb             weber
+H              henry
+T              tesla
+Hz             hertz
+# lm           lumen
+# lx           lux
+# Bq           beqcuerel
+# Gy           gray
+# Sv           sievert
+# kat          katal
 
-gram      g
-second    s
-sec       s
-meter     m
-ampere    A
-candela   cd
-mole      mol
-kelvin    K
-
-radian    rad
-steradian sr
-
-N                       newton
-Pa                      pascal
-W                       watt
-C                       coulomb
-V                       volt
-S                       siemens
-F                       farad
-Wb                      weber
-H                       henry
-T                       tesla
-Hz                      hertz
 
 ###########################################################################
-# Other units                                                             #
+# SI Prefixes (longer names must come first)                              #
+###########################################################################
+
+yotta-    1e24
+zetta-    1e21
+exa-      1e18
+peta-     1e15
+tera-     1e12
+giga-     1e9
+mega-     1e6
+myria-    1e4
+kilo-     1e3
+hecto-    1e2
+deca-     1e1
+deka-     deca
+deci-     1e-1
+centi-    1e-2
+milli-    1e-3
+micro-    1e-6
+nano-     1e-9
+pico-     1e-12
+femto-    1e-15
+atto-     1e-18
+zepto-    1e-21
+yocto-    1e-24
+
+Y-        yotta
+Z-        zetta
+E-        exa
+P-        peta
+T-        tera
+G-        giga
+M-        mega
+k-        kilo
+h-        hecto
+da-       deka
+d-        deci
+c-        centi
+m-        milli
+u-        micro   # it should be "mu" but "u" is easy to type
+n-        nano
+p-        pico
+f-        femto
+a-        atto
+z-        zepto
+y-        yocto
+
+
+###########################################################################
+# Other traditional units                                                 #
 ###########################################################################
 
 percent                 0.01
@@ -100,19 +166,10 @@ barn                    1e-28 m^2
 b                       barn
 calorie                 4.184 J
 cal                     calorie
-atomosphere             101325 Pa
-atm                     atomosphere
-Torr                    1|760 atomosphere
+atmosphere              101325 Pa
+atm                     atmosphere
+Torr                    1|760 atmosphere
 
-planckmass              sqrt(hbar c / GN)
-plancklength            sqrt(hbar GN / c^3)
-reducedplanckmass       planckmass / sqrt(8 pi)
-Mpl                     planckmass
-M                       reducedplanckmass
-
-#----------------------------#
-# angular units              #
-#----------------------------#
 circle                  2 pi radian
 degree                  1|360 circle
 deg                     degree
@@ -124,9 +181,6 @@ arcsec                  1|60 arcmin
 arcsecond               arcsec
 "                       arcsec
 
-#----------------------------#
-# time units                 #
-#----------------------------#
 minute                  60 s
 min                     minute
 hour                    60 min
@@ -136,77 +190,104 @@ d                       day
 week                    7 day
 wk                      week
 
-#----------------------------#
-# atomic units               #
-#----------------------------#
-atomicmassunit          931.494061 MeV/c^2   # from PDG2014
-amu                     atomicmassunit
-avogadro                6.02214129e23 / mol  # from PDG2014
-N_A                     avogadro
 
-#----------------------------#
-# astrophysical units        #
-#----------------------------#
-parsec                  3.08567758149e16 m   # from PDG2014
-pc                      parsec
-astronomicalunit        149597870700 m       # from PDG2014
-au                      astronomicalunit
-solarmass               1.9885e30 kg         # from PDG2014
-earthmass               5.9726e24 kg         # from PDG2014
+###########################################################################
+# Other units and constants for astrophysics and cosmology                #
+###########################################################################
 
-siderealyear            31558149.8 sec       # [2011] from PDG2014
-tropicalyear            31556925.2 sec       # [2011] from PDG2014
+G_N                     6.70861e-39 / GeV^2        # CODATA 2014
+planckmass              1/sqrt(G_N)
+reducedplanckmass       planckmass / sqrt(8 pi)
+M_pl                    planckmass
+M                       reducedplanckmass
+
+tropicalyear            31556925.2 sec       # [2011] PDG2018
+siderealyear            31558149.8 sec       # [2011] PDG2018
 year                    tropicalyear
 yr                      year
 lightyear               365.25 day c         # NIST publication 811
 ly                      lightyear
 
+astronomicalunit        149597870700 m       # PDG2018
+au                      astronomicalunit
+parsec                  3.08567758149e16 m   # PDG2018
+pc                      parsec
+solarmass               1.98848e30 kg        # PDG2018
+earthmass               5.9724e24 kg         # PDG2018
+presentcmbtemperature   2.7255 K             # PDG2018
+T_CMB                   presentcmbtemperature
+presenthubbleconstant   100 0.678 km/s/Mpc   # PDG2018
+H0                      presenthubbleconstant
+criticaldensity         3H0^2 / (8pi G_N)    # PDG2018
+rho_crit                criticaldensity
 
 ###########################################################################
-# Prefixes (longer names must come first)                                 #
+# Other units and constants for particle physics                          #
 ###########################################################################
 
-yotta-                  1e24     # Greek or Latin octo, "eight"
-zetta-                  1e21     # Latin septem, "seven"
-exa-                    1e18     # Greek hex, "six"
-peta-                   1e15     # Greek pente, "five"
-tera-                   1e12     # Greek teras, "monster"
-giga-                   1e9      # Greek gigas, "giant"
-mega-                   1e6      # Greek megas, "large"
-myria-                  1e4      # Not an official SI prefix
-kilo-                   1e3      # Greek chilioi, "thousand"
-hecto-                  1e2      # Greek hekaton, "hundred"
-deca-                   1e1      # Greek deka, "ten"
-deka-                   deca
-deci-                   1e-1     # Latin decimus, "tenth"
-centi-                  1e-2     # Latin centum, "hundred"
-milli-                  1e-3     # Latin mille, "thousand"
-micro-                  1e-6     # Latin micro or Greek mikros, "small"
-nano-                   1e-9     # Latin nanus or Greek nanos, "dwarf"
-pico-                   1e-12    # Spanish pico, "a bit"
-femto-                  1e-15    # Danish-Norwegian femten, "fifteen"
-atto-                   1e-18    # Danish-Norwegian atten, "eighteen"
-zepto-                  1e-21    # Latin septem, "seven"
-yocto-                  1e-24    # Greek or Latin octo, "eight"
+fermiconstant           1.1663787e-5/GeV^2   # PDG2018
+G_F                     fermiconstant
 
-Y-                      yotta
-Z-                      zetta
-E-                      exa
-P-                      peta
-T-                      tera
-G-                      giga
-M-                      mega
-k-                      kilo
-h-                      hecto
-da-                     deka
-d-                      deci
-c-                      centi
-m-                      milli
-u-                      micro   # it should be "mu" but "u" is easy to type
-n-                      nano
-p-                      pico
-f-                      femto
-a-                      atto
-z-                      zepto
-y-                      yocto
+# atomicmassunit          931.494061 MeV/c^2   # from PDG2014
+# amu                     atomicmassunit
 
+###########################################################################
+# Particle masses and widths (from PDG2018)                               #
+###########################################################################
+mass_electron           0.5109989461 MeV
+mass_muon               105.6583745 MeV
+mass_taulepton          1776.86 MeV
+mass_charmquark         1.275 GeV
+mass_bottomquark        4.18 GeV
+mass_topquark           173 GeV
+mass_Wboson             80.379 GeV
+mass_Zboson             91.1876 GeV
+mass_higgsboson         125.18 GeV
+mass_proton             938.2720813 MeV
+mass_neutron            939.565413 MeV
+mass_chargedpion        139.57061 MeV
+mass_neutralpion        134.9770 MeV
+mass_chargedkaon        493.677 MeV
+mass_neutralkaon        497.611 MeV
+
+width_muon              1/(2.1969811e-6 s)
+width_taulepton         1/(290.3e-15 s)
+width_topquark          1.41 GeV
+width_Wboson            2.085 GeV
+width_Zboson            2.4952 GeV
+# width_higgsboson
+width_neutron           1/(880.2 s)
+width_chargedpion       1/(2.6033e-8 s)
+width_neutralpion       1/(8.52e-17 s)
+width_chargedkaon       1/(1.2380e-8 s)
+width_neutralkaonshort  1/(0.8954e-10 s)
+width_neutralkaonlong   1/(5.116e-8 s)
+
+m_e    mass_electron
+m_mu   mass_muon
+m_tau  mass_taulepton
+m_c    mass_charmquark
+m_b    mass_bottomquark
+m_t    mass_topquark
+m_W    mass_Wboson
+m_Z    mass_Zboson
+m_H    mass_higgsboson
+m_p    mass_proton
+m_n    mass_neutron
+m_pi   mass_chargedpion
+m_pi0  mass_neutralpion
+m_K    mass_chargedkaon
+m_K0   mass_neutralkaon
+
+gamma_mu   width_muon
+gamma_tau  width_taulepton
+gamma_t    width_topquark
+gamma_W    width_Wboson
+gamma_Z    width_Zboson
+# gamma_H  width_higgsboson
+gamma_n    width_neutron
+gamma_pi   width_chargedpion
+gamma_pi0  width_neutralpion
+gamma_K    width_chargedkaon
+gamma_KS   width_neutralkaonshort
+gamma_KL   width_neutralkaonlong

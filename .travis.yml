@@ -1,0 +1,14 @@
+language: python
+
+python:
+  - "3.6"
+
+branches:
+  only:
+    - master
+
+install:
+  - sudo apt-get install units -y
+
+script:
+  - python tests/test.py natural.units

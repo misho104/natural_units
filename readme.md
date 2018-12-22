@@ -1,3 +1,5 @@
+[![Build Status](https://api.travis-ci.org/misho104/natural_units.svg?branch=master)](https://travis-ci.org/misho104/natural_units)
+
 # natural_units
 
 The [Natural Units](https://en.wikipedia.org/wiki/Natural_units) convention file for [GNU units](https://www.gnu.org/software/units/).

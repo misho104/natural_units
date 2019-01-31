@@ -2,9 +2,9 @@
 # for use with GNU units by Adrian Mariano <adrian@cam.cornell.edu>.
 #
 # 10 Apr 2015 Version 0.10 by Sho Iwamoto
-# 22 Dec 2018 Version 0.20beta by Sho Iwamoto
-#   - transit to SI definition 2019
-#   - experimental values should be updated by CODATA2018 recommendation
+# 01 Jun 2019 Version 0.20 by Sho Iwamoto
+#   - transit to 2019 new SI definition
+#   - experimental values from CODATA2018 + PDG2018/2019
 #
 
 ###########################################################################
@@ -17,19 +17,19 @@ electronvolt    eV
 
 pi              3.14159265358979323846
 
-c               299792458        m/s        # exact; should be 1
-h               6.62607015e-34   J s        # exact; should be 2pi
-e               1.602176634e-19  C          # exact
-kB              1.380649e-23     J/K        # exact; should be 1
-avogadro        6.02214076e23    /mol       # exact
+c               299792458        m/s        # exact (defining); should be 1
+h               6.62607015e-34   J s        # exact (defining); should be 2pi
+e               1.602176634e-19  C          # exact (defining)
+avogadro        6.02214076e23    /mol       # exact (defining)
+kB              1.380649e-23     J/K        # exact (defining); should be 1
 
 hbar            h / 2 / pi                  # should be 1
-mu0             4 pi 1e-7 H/m               # should be 1; value from BIPM 9th draft https://www.bipm.org/utils/common/pdf/si-brochure-draft-2016.pdf
-epsilon0        1/mu0 c^2                   # should be 1
+mu0             1.25663706212e-6 N/A^2      # CODATA2018
+epsilon0        1/mu0 c^2                   # derived
 
 joule           1|1.602176634e-19 eV        # exact; because eV/J = (V e) / (V C) = e/C
 
-A               sqrt(4e-7 pi N)             # experimental; because mu0 = 4e-7 pi N/A^2  = 1
+A               sqrt(1.25663706212e-6 N)    # experimentally defined; because mu0 = 1
 s               2pi / (6.62607015e-34 J)    # exact; because h = 2pi
 m               1   / (299792458 /s)        # exact; because c = 1
 K               1.380649e-23 J              # exact; because kB = 1
@@ -147,7 +147,7 @@ y-        yocto
 
 
 ###########################################################################
-# Other traditional units                                                 #
+# Other traditional units (not recommended to use)                        #
 ###########################################################################
 
 percent                 0.01
@@ -156,7 +156,7 @@ ppm                     1e-6
 ppb                     1e-9
 ppt                     1e-12
 
-inch                    0.0254 m
+inch                    0.0254 m          # definition
 in                      inch
 gauss                   1e-4 tesla
 G                       gauss
@@ -164,11 +164,12 @@ angstrom                1e-10 m
 dyne                    1e-5 newton
 barn                    1e-28 m^2
 b                       barn
-calorie                 4.184 J
-cal                     calorie
-atmosphere              101325 Pa
+thermochemicalcalorie   4.184 J           # definition
+calorie                 thermochemicalcalorie
+cal                     thermochemicalcalorie
+atmosphere              101325 Pa         # definition
 atm                     atmosphere
-Torr                    1|760 atmosphere
+Torr                    1|760 atmosphere  # definition
 
 circle                  2 pi radian
 degree                  1|360 circle
@@ -195,11 +196,16 @@ wk                      week
 # Other units and constants for astrophysics and cosmology                #
 ###########################################################################
 
-G_N                     6.70861e-39 / GeV^2        # CODATA 2014
+G_N                     6.70883e-39 / GeV^2   # CODATA2018
 planckmass              1/sqrt(G_N)
 reducedplanckmass       planckmass / sqrt(8 pi)
 M_pl                    planckmass
-M                       reducedplanckmass
+M0                      reducedplanckmass
+
+fermiconstant           1.1663787e-5/GeV^2    # CODATA2018
+G_F                     fermiconstant
+atomicmassunit          931.49410242 MeV/c^2  # CODATA2018
+amu                     atomicmassunit
 
 tropicalyear            31556925.2 sec       # [2011] PDG2018
 siderealyear            31558149.8 sec       # [2011] PDG2018
@@ -225,25 +231,20 @@ rho_crit                criticaldensity
 # Other units and constants for particle physics                          #
 ###########################################################################
 
-fermiconstant           1.1663787e-5/GeV^2   # PDG2018
-G_F                     fermiconstant
-
-# atomicmassunit          931.494061 MeV/c^2   # from PDG2014
-# amu                     atomicmassunit
-
 ###########################################################################
-# Particle masses and widths (from PDG2018)                               #
+# Particle masses and widths (from PDG2019)                               #
 ###########################################################################
+
 mass_electron           0.5109989461 MeV
 mass_muon               105.6583745 MeV
 mass_taulepton          1776.86 MeV
-mass_charmquark         1.275 GeV
+mass_charmquark         1.27 GeV
 mass_bottomquark        4.18 GeV
-mass_topquark           173 GeV
+mass_topquark           172.9 GeV
 mass_Wboson             80.379 GeV
 mass_Zboson             91.1876 GeV
-mass_higgsboson         125.18 GeV
-mass_proton             938.2720813 MeV
+mass_higgsboson         125.10 GeV
+mass_proton             938.272081 MeV
 mass_neutron            939.565413 MeV
 mass_chargedpion        139.57061 MeV
 mass_neutralpion        134.9770 MeV
@@ -252,11 +253,11 @@ mass_neutralkaon        497.611 MeV
 
 width_muon              1/(2.1969811e-6 s)
 width_taulepton         1/(290.3e-15 s)
-width_topquark          1.41 GeV
+width_topquark          1.42 GeV
 width_Wboson            2.085 GeV
 width_Zboson            2.4952 GeV
 # width_higgsboson
-width_neutron           1/(880.2 s)
+width_neutron           1/(879.4 s)
 width_chargedpion       1/(2.6033e-8 s)
 width_neutralpion       1/(8.52e-17 s)
 width_chargedkaon       1/(1.2380e-8 s)

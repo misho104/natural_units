@@ -1,15 +1,18 @@
 {
   "cSpell.words": [
+    "NIST",
+    "Peskin",
     "gunits",
     "hbar",
-    "NIST",
     "permittivity",
-    "Peskin",
+    "popen",
     "readline",
+    "shutil",
     "sup",
     "tropicalyear"
   ],
   "markdownlint.config": {
     "MD033": { "allowed_elements": ["sub", "sup"] }
-  }
+  },
+  "python.pythonPath": "/Users/misho/.pyenv/versions/3.6.6/bin/python"
 }

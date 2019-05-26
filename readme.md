@@ -226,7 +226,7 @@ You want:
 
 Values are taken from [PDG Review of Particle Physics 2014](http://inspirehep.net/record/1315584).
 
-Planck mass is symbolized by `Mpl`, while reduced Planck mass is by `M`.
+Planck mass is symbolized by `M_pl`, while reduced Planck mass is by `M`.
 
 Light year (`ly`) is defined as
   **c &times; 365.25day**

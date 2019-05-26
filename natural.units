@@ -5,6 +5,7 @@
 # 01 Jun 2019 Version 0.20 by Sho Iwamoto
 #   - transit to 2019 new SI definition
 #   - experimental values from CODATA2018 + PDG2018/2019
+#   - rename "atomic mass unit" to "unified atomic mass unit"
 #
 
 ###########################################################################
@@ -204,8 +205,10 @@ M0                      reducedplanckmass
 
 fermiconstant           1.1663787e-5/GeV^2    # CODATA2018
 G_F                     fermiconstant
-atomicmassunit          931.49410242 MeV/c^2  # CODATA2018
-amu                     atomicmassunit
+unifiedatomicmassunit   931.49410242 MeV/c^2  # CODATA2018
+u                       unifiedatomicmassunit
+dalton                  unifiedatomicmassunit
+Da                      dalton
 
 tropicalyear            31556925.2 sec       # [2011] PDG2018
 siderealyear            31558149.8 sec       # [2011] PDG2018

@@ -8,6 +8,8 @@
 #   - rename "atomic mass unit" to "unified atomic mass unit"
 # 04 Jun 2020 Version 0.21 by Sho Iwamoto
 #   - accept PDG2020 values
+# 16 Jun 2022 Version 0.22 by Sho Iwamoto
+#   - accept PDG2022 values
 #
 
 ###########################################################################
@@ -30,7 +32,8 @@ hbar            h / 2 / pi                  # should be 1
 mu0             1.25663706212e-6 N/A^2      # CODATA2018
 epsilon0        1/mu0 c^2                   # derived
 
-joule           1|1.602176634e-19 eV        # exact; because eV/J = (V e) / (V C) = e/C
+joule           1|1.602176634e-19 eV        # exact; because eV = e V.
+                                            #        cf. eV/J = (V e) / (V C) = e/C.
 
 A               sqrt(1.25663706212e-6 N)    # experimentally defined; because mu0 = 1
 s               2pi / (6.62607015e-34 J)    # exact; because h = 2pi
@@ -165,6 +168,7 @@ gauss                   1e-4 tesla
 G                       gauss
 angstrom                1e-10 m
 dyne                    1e-5 newton
+erg                     1e-7 joule
 barn                    1e-28 m^2
 b                       barn
 thermochemicalcalorie   4.184 J           # definition
@@ -205,15 +209,15 @@ reducedplanckmass       planckmass / sqrt(8 pi)
 M_pl                    planckmass
 M0                      reducedplanckmass
 
-fermiconstant           1.1663787e-5/GeV^2    # CODATA2018
+fermiconstant           1.1663788e-5/GeV^2    # PDG2022
 G_F                     fermiconstant
 unifiedatomicmassunit   931.49410242 MeV/c^2  # CODATA2018
 u                       unifiedatomicmassunit
 dalton                  unifiedatomicmassunit
 Da                      dalton
 
-tropicalyear            31556925.1 sec        # [2020] PDG2020
-siderealyear            31558149.8 sec        # [2020] PDG2020
+tropicalyear            31556925.1 sec        # [of 2020] PDG2022
+siderealyear            31558149.8 sec        # [of 2020] PDG2022
 year                    tropicalyear
 yr                      year
 lightyear               365.25 day c          # depricated; NIST publication 811
@@ -223,11 +227,11 @@ astronomicalunit        149597870700 m        # definition
 au                      astronomicalunit
 parsec                  3.08567758149e16 m    # definition
 pc                      parsec
-solarmass               1.98841e30 kg         # PDG2020
-earthmass               5.97217e24 kg         # PDG2020
-presentcmbtemperature   2.7255 K              # PDG2020
+solarmass               1.98841e30 kg         # PDG2022
+earthmass               5.97217e24 kg         # PDG2022
+presentcmbtemperature   2.7255 K              # PDG2022
 T_CMB                   presentcmbtemperature
-presenthubbleconstant   100 0.674 km/s/Mpc    # PDG2020
+presenthubbleconstant   100 0.674 km/s/Mpc    # PDG2022
 H0                      presenthubbleconstant
 criticaldensity         3H0^2 / (8pi G_N)
 rho_crit                criticaldensity
@@ -237,18 +241,18 @@ rho_crit                criticaldensity
 ###########################################################################
 
 ###########################################################################
-# Particle masses and widths (from PDG2020)                               #
+# Particle masses and widths (from PDG2022)                               #
 ###########################################################################
 
-mass_electron           0.51099895000 MeV  # CODATA2018
-mass_muon               105.6583745 MeV
+mass_electron           0.51099895000 MeV
+mass_muon               105.6583755 MeV
 mass_taulepton          1776.86 MeV
 mass_charmquark         1.27 GeV
 mass_bottomquark        4.18 GeV
-mass_topquark           172.76 GeV  # based on direct measurement
-mass_Wboson             80.379 GeV
+mass_topquark           172.69 GeV  # based on direct measurement
+mass_Wboson             80.377 GeV
 mass_Zboson             91.1876 GeV
-mass_higgsboson         125.10 GeV
+mass_higgsboson         125.25 GeV
 mass_proton             938.27208816 MeV
 mass_neutron            939.56542052 MeV
 mass_chargedpion        139.57039 MeV
@@ -261,10 +265,10 @@ width_taulepton         1/(290.3e-15 s)
 width_topquark          1.42 GeV
 width_Wboson            2.085 GeV
 width_Zboson            2.4952 GeV
-# width_higgsboson
-width_neutron           1/(879.4 s)
+width_higgsboson        3.2 MeV   # ongoing measured; large uncertainty
+width_neutron           1/(878.4 s)
 width_chargedpion       1/(2.6033e-8 s)
-width_neutralpion       1/(8.52e-17 s)
+width_neutralpion       1/(8.43e-17 s)
 width_chargedkaon       1/(1.2380e-8 s)
 width_neutralkaonshort  1/(0.8954e-10 s)
 width_neutralkaonlong   1/(5.116e-8 s)

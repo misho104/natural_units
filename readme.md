@@ -66,6 +66,16 @@ The fine structure constant is given by
 where the elementary charge is given by
   **e = 1.60&times;10<sup>-19</sup> C = 0.303**.
 
+### Data Source
+
+- *CODATA recommended values of the fundamental physical constants: 2018*, [Rev. Mod. Phys. **93** (2021) 025010](https://doi.org/10.1103/RevModPhys.93.025010), [https://physics.nist.gov/cuu/Constants/](https://physics.nist.gov/cuu/Constants/)
+- Particle Data Group, *Review of Particle Physics 2022*, to be published in Prog. Theor. Exp. Phys. **2022** (2022) 083C01, [https://pdg.lbl.gov/](https://pdg.lbl.gov/)
+
+### Notes
+
+Planck mass is symbolized by `M_pl`, while reduced Planck mass is by `M`.
+Light year (`ly`) is defined as **c &times; 365.25day** following [NIST publication 811](https://www.nist.gov/pml/special-publication-811), while `yr` denotes `tropicalyear` as is in PDG table.
+
 ## How to use
 
   1. Install GNU units.
@@ -98,7 +108,6 @@ Run GNU Units with the file `natural.units`, downloaded from this GitHub reposit
 units -f natural.units    # Debian / Ubuntu + apt-get
 gunits -f natural.units   # macOS + Homebrew
 ```
-
 
 ### Troubleshooting
 
@@ -222,16 +231,6 @@ You want:
     Definition: 5.9157135e-17 GeV^2
 ```
 
-## Data Source and Convention
-
-Values are taken from [PDG Review of Particle Physics 2014](http://inspirehep.net/record/1315584).
-
-Planck mass is symbolized by `M_pl`, while reduced Planck mass is by `M`.
-
-Light year (`ly`) is defined as
-  **c &times; 365.25day**
-following [NIST publication 811](https://www.nist.gov/pml/special-publication-811), while `yr` denotes `tropicalyear` as is in PDG table.
-
 ## Author
 
-Sho Iwamoto @ [http://www.misho-web.com/](http://www.misho-web.com/)
+Sho Iwamoto @ [https://www.misho-web.com/](https://www.misho-web.com/)

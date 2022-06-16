@@ -1,0 +1,25 @@
+name: 'Setup Python and GNU Units'
+description: 'Setup Python and GNU Units.'
+author: 'Sho Iwamoto'
+inputs:
+  python-version:
+    description: 'Python version to install'
+    required: true
+  architecture:
+    description: 'Architecture passed to setup-python'
+    required: true
+runs:
+  using: 'composite'
+  steps:
+    - name: Get current date
+      id: date
+      run: echo "::set-output name=date::$(date +'%Y%m%d')"
+      shell: bash
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ inputs.python-version }}
+        architecture: ${{ inputs.architecture }}
+    - name: Install GNU Units
+      run: sudo apt-get install units -y
+      shell: bash

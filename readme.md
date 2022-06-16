@@ -1,4 +1,4 @@
-[![Build Status](https://api.travis-ci.org/misho104/natural_units.svg?branch=master)](https://travis-ci.org/misho104/natural_units)
+[![Build Status](https://github.com/misho104/natural_units/actions/workflows/unit-test.yaml/badge.svg?branch=master)](https://github.com/misho104/natural_units/actions/workflows/unit-test.yaml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-ff25d1.svg)](https://github.com/misho104/natural_units/blob/master/LICENSE)
 
 # natural_units

@@ -107,6 +107,8 @@ Hz             hertz
 # SI Prefixes (longer names must come first)                              #
 ###########################################################################
 
+quetta-   1e30
+ronna-    1e27
 yotta-    1e24
 zetta-    1e21
 exa-      1e18
@@ -129,7 +131,11 @@ femto-    1e-15
 atto-     1e-18
 zepto-    1e-21
 yocto-    1e-24
+ronto-    1e-27
+quecto-   1e-30
 
+Q-        quetta
+R-        ronna
 Y-        yotta
 Z-        zetta
 E-        exa
@@ -150,6 +156,8 @@ f-        femto
 a-        atto
 z-        zepto
 y-        yocto
+r-        ronto
+q-        quecto
 
 
 ###########################################################################
